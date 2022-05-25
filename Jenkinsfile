@@ -31,8 +31,7 @@ pipeline {
           stage('Update to Beanstalk') {
             steps {
                 sh  "echo Update to Beanstalk"
-                sh 'aws elasticbeanstalk update-environment --application-name php --environment-name Php-env --version-label jenkins-pipeline-17
-'
+                sh 'aws elasticbeanstalk update-environment --application-name php --environment-name Php-env --version-label jenkins-pipeline-17'
             }
         }
     }
