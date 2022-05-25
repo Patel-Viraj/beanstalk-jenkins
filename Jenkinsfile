@@ -13,7 +13,7 @@ pipeline {
         }
         stage('make zip') {
             steps {
-                sh 'zip -r myzip.zip * '
+                sh 'zip -r myzip.zip *'
             }
         }
          stage('Copy to s3') {
