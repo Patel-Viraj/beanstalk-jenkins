@@ -25,13 +25,13 @@ pipeline {
           stage('Create Application') {
             steps {
                 sh  "echo Create Application"
-                sh 'aws elasticbeanstalk create-application-version --application-name php  --version-label jenkins-pipeline-20  --source-bundle S3Bucket=jenkins-backup-files-sa,S3Key=myzip.zip'
+                sh 'aws elasticbeanstalk create-application-version --application-name php  --version-label jenkins-pipeline-22  --source-bundle S3Bucket=jenkins-backup-files-sa,S3Key=myzip.zip'
             }
         }
           stage('Update to Beanstalk') {
             steps {
                 sh  "echo Update to Beanstalk"
-                sh 'aws elasticbeanstalk update-environment --application-name php --environment-name Php-env --version-label jenkins-pipeline-20'
+                sh 'aws elasticbeanstalk update-environment --application-name php --environment-name Php-env --version-label jenkins-pipeline-22'
             }
         }
     }
